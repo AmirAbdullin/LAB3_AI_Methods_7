@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генерация текста</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Генерация текста с использованием rugpt3small_based_on_gpt2</h1>
+        
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="txt_input">Введите запрос:</label>
+                <textarea class="form-control" id="txt_input" name="txt_input" rows="4" cols="50">Как дела?</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Сгенерировать отчёт 📄</button>
+        </form>
+
+        {% if response %}
+            <div class="mt-4">
+                <h2>Результат генерации:</h2>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
